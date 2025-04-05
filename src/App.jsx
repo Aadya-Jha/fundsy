@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-     <Explore />
+     <Explore className="bg-[oklch(14.1%_0.005_285.823)]"/>
     </>
   )
 }
