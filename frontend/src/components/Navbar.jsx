@@ -78,7 +78,7 @@ const Navbar = () => {
         <div className="flex items-center gap-2 sm:gap-6 text-xs sm:text-base">
           <a
             href="/"
-            className="text-gray-700 hover:bg-purple font-bold hover:text-white px-2 sm:px-4 py-1 sm:py-2 rounded-md transition"
+            className="text-gray-700 hover:bg-purple font-semibold  hover:text-white px-2 sm:px-4 py-1 sm:py-2 rounded-md transition"
           >
             Home
           </a>
@@ -86,7 +86,7 @@ const Navbar = () => {
             <Link
               key={item.name}
               to={item.link}
-              className="text-gray-700 font-bold hover:bg-purple hover:text-white px-2 sm:px-4 py-1 sm:py-2 rounded-md transition"
+              className="text-gray-700 font-semibold hover:bg-purple hover:text-white px-2 sm:px-4 py-1 sm:py-2 rounded-md transition"
               onClick={() => setIsMenuOpen(false)}
             >
               {item.name}
