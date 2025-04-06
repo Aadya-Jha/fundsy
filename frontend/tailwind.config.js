@@ -16,6 +16,9 @@ export default {
   ],
   theme: {
     extend: {
+      animation: {
+        "gradient-x": "gradient-x 5s ease infinite",
+      },
       colors: {
         "beige-light": "var(--beige-light)",
         "beige-dark": "var(--beige-dark)",
