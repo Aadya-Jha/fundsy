@@ -9,3 +9,36 @@
   --purple: #dfccfb;
   --pink: #f3d0d7;
 }
+
+.gradient-border {
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  background: linear-gradient(270deg, #a78bfa, #f472b6, #34d399);
+  background-size: 600% 600%;
+  border-radius: inherit;
+  animation: borderGradient 6s ease infinite;
+}
+
+@keyframes borderGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

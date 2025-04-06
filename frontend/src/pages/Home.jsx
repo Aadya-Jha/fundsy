@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Badge = ({ text }) => (
   <span className="bg-white/70 text-xs font-semibold text-gray-700 px-3 py-1 rounded-full shadow-sm">
@@ -8,8 +9,20 @@ const Badge = ({ text }) => (
   </span>
 );
 
-const InfoCard = ({ title, description, buttonText, badge, link, bgColor }) => (
-  <div
+const InfoCard = ({
+  title,
+  description,
+  buttonText,
+  badge,
+  link,
+  bgColor,
+  delay,
+}) => (
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6, delay }}
     className={`w-72 h-72 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col justify-between border border-gray-200 ${bgColor}`}
   >
     <div>
@@ -21,11 +34,11 @@ const InfoCard = ({ title, description, buttonText, badge, link, bgColor }) => (
     </div>
     <Link
       to={link}
-      className="mt-4 inline-block self-start bg-purple-600 text-gray-500 text-sm font-semibold px-4 py-2 rounded-full hover:bg-purple-700 transition"
+      className="mt-4 inline-block self-start bg-purple-600 text-gray-100 text-sm font-semibold px-4 py-2 rounded-full hover:bg-purple-700 transition"
     >
       {buttonText} →
     </Link>
-  </div>
+  </motion.div>
 );
 
 const Home = () => {
@@ -37,7 +50,7 @@ const Home = () => {
       buttonText: "Explore",
       badge: "Live",
       link: "/explore",
-      bgColor: "bg-purple", // matte lavender
+      bgColor: "bg-purple",
     },
     {
       title: "Transparent Donations",
@@ -46,7 +59,7 @@ const Home = () => {
       buttonText: "How it Works",
       badge: "Blockchain",
       link: "/about",
-      bgColor: "bg-olive", // matte olive
+      bgColor: "bg-olive",
     },
     {
       title: "Need Help?",
@@ -55,15 +68,21 @@ const Home = () => {
       buttonText: "FAQs",
       badge: "Support",
       link: "/faqs",
-      bgColor: "bg-pink", // matte yellow
+      bgColor: "bg-pink",
     },
   ];
 
   return (
     <div>
       <Navbar />
+
       <main className="bg-beige-light min-h-[90vh] flex items-center justify-center px-6">
-        <div className="backdrop-blur-md bg-white/30 border border-white/20 shadow-xl rounded-2xl p-10 text-center max-w-2xl w-full">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="backdrop-blur-md bg-white/30 border border-white/20 shadow-xl rounded-2xl p-10 text-center max-w-2xl w-full"
+        >
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple to-pink mb-6 animate-fade-in">
             Empower Education, One Block at a Time.
           </h1>
@@ -78,7 +97,7 @@ const Home = () => {
           >
             Learn More
           </a>
-        </div>
+        </motion.div>
       </main>
 
       {/* Info Cards Section */}
@@ -89,17 +108,16 @@ const Home = () => {
         </h2>
         <div className="flex flex-wrap justify-center gap-8">
           {cards.map((card, index) => (
-            <InfoCard key={index} {...card} />
+            <InfoCard key={index} {...card} delay={index * 0.2} />
           ))}
         </div>
       </section>
 
-      {/* Footer directly inside Home */}
-      <footer className="bg-beige-dark text-gray-800 py-10 px-6  shadow-inner ">
+      {/* Footer */}
+      <footer className="bg-beige-dark text-gray-800 py-10 px-6 shadow-inner">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12">
-          {/* Logo and Description */}
           <div className="flex-1">
-            <h3 className="text-2xl text-vi font-extrabold text-purple-700 mb-2">
+            <h3 className="text-2xl font-extrabold text-purple-700 mb-2">
               Fundsy
             </h3>
             <p className="text-sm text-gray-600 max-w-xs leading-relaxed">
@@ -108,7 +126,6 @@ const Home = () => {
             </p>
           </div>
 
-          {/* Links */}
           <div className="flex flex-col sm:flex-row gap-8 text-sm">
             <div>
               <h4 className="font-semibold text-purple-600 mb-2">
@@ -140,14 +157,13 @@ const Home = () => {
                 </li>
               </ul>
             </div>
-
             <div>
               <h4 className="font-semibold text-purple-600 mb-2">Contact</h4>
               <ul className="space-y-1">
                 <li>
                   Email:{" "}
                   <a
-                    href="mailto:support@edublock.org"
+                    href="mailto:support@fundsy.org"
                     className="hover:text-purple-700 transition"
                   >
                     support@fundsy.org
@@ -159,7 +175,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-
         <div className="text-center text-xs text-gray-400 mt-10 pt-6 border-t border-gray-200">
           © {new Date().getFullYear()} Fundsy. All rights reserved.
         </div>
