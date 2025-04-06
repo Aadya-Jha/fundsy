@@ -61,7 +61,10 @@ const Navbar = () => {
               className="w-8 h-8 sm:w-10 sm:h-10"
             />
           </Link>
-          <a href="/" className="text-sm sm:text-lg font-bold text-gray-800">
+          <a
+            href="/"
+            className="text-lg sm:text-2xl font-extrabold tracking-wide text-violet-950"
+          >
             Fundsy
           </a>
         </div>
