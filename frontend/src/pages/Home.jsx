@@ -54,7 +54,7 @@ const Home = () => {
         "Got questions? Visit our FAQ section for all the guidance you need.",
       buttonText: "FAQs",
       badge: "Support",
-      link: "/faqs",
+      link: "/FAQ",
       bgColor: "bg-pink", // matte yellow
     },
   ];
@@ -134,7 +134,7 @@ const Home = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/faqs" className="hover:text-purple-700 transition">
+                  <a href="/FAQ" className="hover:text-purple-700 transition">
                     FAQs
                   </a>
                 </li>

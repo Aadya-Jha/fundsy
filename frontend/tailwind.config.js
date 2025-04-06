@@ -10,7 +10,7 @@ export default {
     "./src/pages/Home.jsx",
     "./src/pages/explore.jsx",
     "./src/pages/About.jsx",
-    "./src/pages/FAQ.jsx",
+    "./src/pages/faq.jsx",
     "./src/pages/NotFound.jsx",
   ],
   theme: {
