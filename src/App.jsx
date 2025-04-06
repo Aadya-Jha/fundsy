@@ -1,14 +1,14 @@
 
 import React from "react";
 import './App.css'
-import Explore from './components/explore.jsx'
+import Faq from './components/faq.jsx'
 
 function App() {
  
 
   return (
     <>
-     <Explore className="bg-[oklch(14.1%_0.005_285.823)]"/>
+     <Faq />
     </>
   )
 }
