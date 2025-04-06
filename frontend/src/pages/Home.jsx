@@ -34,7 +34,7 @@ const InfoCard = ({
     </div>
     <Link
       to={link}
-      className="mt-4 inline-block self-start bg-purple-600 text-gray-100 text-sm font-semibold px-4 py-2 rounded-full hover:bg-purple-700 transition"
+      className="mt-4 inline-block self-start bg-purple-600 text-gray-500 text-sm font-semibold px-4 py-2 rounded-full hover:bg-purple-700 transition"
     >
       {buttonText} →
     </Link>
@@ -67,7 +67,7 @@ const Home = () => {
         "Got questions? Visit our FAQ section for all the guidance you need.",
       buttonText: "FAQs",
       badge: "Support",
-      link: "/faqs",
+      link: "/faq",
       bgColor: "bg-pink",
     },
   ];
@@ -76,12 +76,12 @@ const Home = () => {
     <div>
       <Navbar />
 
-      <main className="bg-beige-light min-h-[90vh] flex items-center justify-center px-6">
+      <main className="bg-[#fefcf8] min-h-[90vh] flex items-center justify-center px-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="backdrop-blur-md bg-white/30 border border-white/20 shadow-xl rounded-2xl p-10 text-center max-w-2xl w-full"
+          className="backdrop-blur-md bg-beige-light border border-white/20 shadow-xl rounded-2xl p-10 text-center max-w-2xl w-full"
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple to-pink mb-6 animate-fade-in">
             Empower Education, One Block at a Time.
@@ -117,7 +117,7 @@ const Home = () => {
       <footer className="bg-beige-dark text-gray-800 py-10 px-6 shadow-inner">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12">
           <div className="flex-1">
-            <h3 className="text-2xl font-extrabold text-purple-700 mb-2">
+            <h3 className="text-2xl font-extrabold text-violet-950 mb-2">
               Fundsy
             </h3>
             <p className="text-sm text-gray-600 max-w-xs leading-relaxed">
@@ -151,7 +151,7 @@ const Home = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="/faqs" className="hover:text-purple-700 transition">
+                  <a href="/FAQ" className="hover:text-purple-700 transition">
                     FAQs
                   </a>
                 </li>

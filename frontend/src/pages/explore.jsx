@@ -8,7 +8,7 @@ import img5 from "../assets/sports.jpg";
 
 const Explore = (props) => {
   return (
-    <div className="bg-[oklch(14.1%_0.005_285.823)] min-h-screen w-screen ">
+    <div className="bg-beige-light min-h-screen w-screen ">
       <h1
         className="text-white text-3xl font-sans sm:px-5 font-bold text-center py-4"
         style={{ textShadow: "0 0 6px rgba(255, 255, 255, 0.3)" }}
