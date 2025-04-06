@@ -11,7 +11,7 @@ const Questions = (props) => {
     return(
         <div className={`mx-6 my-4 px-8 py-4 w-full transition-all ease-in-out duration-300 pr-3 ${isOpen ? "max-h-64" : "max-h-20"  }`}>
             <div 
-                className="  flex flex-row justify-between items-center h-20 bg-beige-dark rounded-xl shadow:lg
+                className="  flex flex-row justify-between items-center h-20 bg-beige-dark rounded-2xl shadow:xl
                  hover:shadow-2xl"
             >
                 <p className="font-sans text-xl font-semibold text-violet-950 px-3">{props.ques}</p>

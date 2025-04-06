@@ -2,8 +2,9 @@ import React from 'react'
 
 const Card = (props) => {
     return(
-        <div className='h-80 w-64 bg-beige-dark mx-8 my-4 rounded-lg flex flex-col items-center hover:bg-[oklch(82%_0.088_100.17)] 
-        shadow-[0_4px_20px_rgba(255,235,130,0.15)] hover:shadow-[0_6px_25px_rgba(255,235,130,0.25)] hover:scale-95 hover:cursor-pointer'>
+        <div className={`h-80 w-64  mx-8 my-4 rounded-lg flex flex-col items-center shadow-2xl hover:scale-105 hover:cursor-pointer
+         ${props.className}`}
+        >
             <img className='h-48 w-full flex flex-col items-center rounded-lg justify-center shadow-lg ' src={props.source} alt="" />
             <h3 className='text-black font-sans text-xl font-semibold text-center'>{props.title}</h3>
             <p className='text-black font-sans text-lg font-normal text-center'>{props.amount}</p>
