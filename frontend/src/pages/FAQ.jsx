@@ -1,5 +1,5 @@
 import React from "react";
-import faqImg from "../assets/FAQS.jpg"
+
 import Questions from '../components/questions.jsx'
 import Navbar from "../components/Navbar";
 
@@ -9,7 +9,7 @@ const FAQ = () => {
             <Navbar />
             <div className="bg-beige-light min-h-screen w-screen text-3xl font-serif font-extrabold flex  ">
             
-            <div className="w-2/3 flex flex-col  py-4">
+            <div className="md:w-2/3 sm:w-5/6 w-10/12 flex flex-col sm:pl-4 py-4">
                 <h1 className="text-violet-950 text-5xl flex justify-center items-start "
                 style={{textShadow: '0 0 6px rgba(255, 255, 255, 0.3)'}}>FAQs</h1>
                 
@@ -40,9 +40,6 @@ const FAQ = () => {
                       account or wallet." 
                     />
                 
-            </div>
-            <div className="w-1/3 flex justify-center items-center">
-                <img className="h-72 w-96 rounded-2xl shadow-xl" src={faqImg} alt="FAQs image" />
             </div>
         </div>
         </div>
