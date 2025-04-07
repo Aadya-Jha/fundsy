@@ -9,6 +9,46 @@ import img5 from "../assets/sports.jpg";
 import Navbar from "../components/Navbar";
 
 const Explore = (props) => {
+
+  const features = [
+  {
+    title: "Women in STEM Scholarship",
+    amount: "₹1,00,000 per student",
+    time: "20 days left",
+    color: "bg-[#E5F4E3]",
+    image: img1
+  },
+  {
+    title: "Need-Based Scholarship",
+    amount: "Covers tuition + ₹10,000 stipend",
+    time: "30 days left",
+    color: "bg-[#BBDDB7]",
+    image: img3
+  },
+  {
+    title: "Merit-Based Scholarship",
+    amount: "₹50,000 per recipient",
+    time: "15 days left",
+    color: "bg-[#FFF4D6]",
+    image: img2
+  },
+  {
+    title: "Research & Innovation Grant",
+    amount: "Up to ₹2,00,000",
+    time: "45 days left",
+    color: "bg-[#E4D1FD]",
+    image: img4
+  },
+  {
+    title: "Sports Scholarship",
+    amount: "Full tuition + training support",
+    time: "10 days left",
+    color: "bg-[#FFE8AD]",
+    image: img5
+  }
+];
+
+
   return (
     <div>
       <Navbar />
@@ -31,43 +71,27 @@ const Explore = (props) => {
         Unlocking education through verified scholarships. Every grant is
         transparently tracked for fairness and impact
       </motion.p>
-      <div className="grid lg:grid-cols-3 lg:gap-0 place-items-center md:grid-cols-2 md:gap-0 sm:grid-cols-1 sm:gap-0">
-        <Card
-        className="bg-[#E5F4E3]"
-          source={img1}
-          title="Women in STEM Scholarship"
-          amount="₹1,00,000 per student"
-          time="20 days left"
-        />
-        <Card
-          className="bg-[#BBDDB7]"
-          source={img3}
-          title="Need-Based Scholarship"
-          amount="Covers tuition + ₹10,000 stipend"
-          time="30 days left"
-        />
-        <Card
-          className="bg-[#FFF4D6]"
-          source={img2}
-          title="Merit-Based Scholarship"
-          amount="₹50,000 per recipient"
-          time="15 days left"
-        />
-        <Card
-        className="bg-[#E4D1FD]"
-          source={img4}
-          title="Research & Innovation Grant"
-          amount="Up to ₹2,00,000"
-          time="45 days left"
-        />
-        <Card
-        className="bg-[#FFE8AD]"
-          source={img5}
-          title="Sports Scholarship"
-          amount="Full tuition + training support"
-          time="10 days left"
-        />
-      </div>
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 place-items-center gap-4">
+        {features.map((feature, index) => (
+        <motion.div
+        key={index}
+        whileHover={{ scale: 1.03 }}
+        whileTap={{ scale: 0.98 }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 * index }}
+        className={`transition-all duration-300`}
+      >
+      <Card
+        source={feature.image}
+        title={feature.title}
+        amount={feature.amount}
+        time={feature.time}
+      />
+      </motion.div>
+      ))}
+    </div>
+
     </div>
     </div>
   );
