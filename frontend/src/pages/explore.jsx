@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Card from "../components/card.jsx";
 import img1 from "../assets/women-in-stem.jpg";
 import img2 from "../assets/merit-based.jpg";
@@ -12,16 +13,24 @@ const Explore = (props) => {
     <div>
       <Navbar />
       <div className="bg-beige-light min-h-screen w-screen ">
-      <h1
-        className="text-purple text-5xl font-sans sm:px-5 font-extrabold text-center py-4"
+      <motion.h1
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-purple text-5xl font-sans sm:px-5 pl-4 pr-4 font-extrabold text-center py-4"
         style={{ textShadow: "0 0 6px rgba(255, 255, 255, 0.3)" }}
       >
         Fundsy Scholarship Hub
-      </h1>
-      <p className="text-gray-700 text-lg font-sans  text-center px:10 sm:px-8 ">
+      </motion.h1>
+      <motion.p 
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-gray-700 text-lg font-sans  text-center pl-4 pr-4 sm:px-8 "
+      >
         Unlocking education through verified scholarships. Every grant is
         transparently tracked for fairness and impact
-      </p>
+      </motion.p>
       <div className="grid lg:grid-cols-3 lg:gap-0 place-items-center md:grid-cols-2 md:gap-0 sm:grid-cols-1 sm:gap-0">
         <Card
         className="bg-[#E5F4E3]"

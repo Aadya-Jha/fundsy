@@ -12,7 +12,9 @@ export default {
     "./src/pages/About.jsx",
     "./src/pages/FAQ.jsx",
     "./src/pages/NotFound.jsx",
-    "./src/components/questions.jsx"
+    "./src/components/questions.jsx",
+    "./src/components/Forum.jsx",
+    "./src/components/ForumCard.jsx"
   ],
   theme: {
     extend: {

@@ -2,6 +2,7 @@ import React from "react";
 
 import Questions from '../components/questions.jsx'
 import Navbar from "../components/Navbar";
+import Forum from "../components/Forum.jsx";
 
 const FAQ = () => {
     return(
@@ -10,7 +11,7 @@ const FAQ = () => {
             <div className="bg-beige-light min-h-screen w-screen text-3xl font-serif font-extrabold flex  ">
             
             <div className="md:w-2/3 sm:w-5/6 w-10/12 flex flex-col sm:pl-4 py-4">
-                <h1 className="text-violet-950 text-5xl flex justify-center items-start "
+                <h1 className="text-purple text-5xl flex justify-center items-start font-sans "
                 style={{textShadow: '0 0 6px rgba(255, 255, 255, 0.3)'}}>FAQs</h1>
                 
                     <Questions ques="What is Fundsy and how does it work?"
@@ -42,6 +43,7 @@ const FAQ = () => {
                 
             </div>
         </div>
+        <Forum />
         </div>
     );
 }

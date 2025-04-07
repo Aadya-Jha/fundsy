@@ -6,9 +6,9 @@ const Card = (props) => {
          ${props.className}`}
         >
             <img className='h-48 w-full flex flex-col items-center rounded-lg justify-center shadow-lg ' src={props.source} alt="" />
-            <h3 className='text-black font-sans text-xl font-semibold text-center'>{props.title}</h3>
-            <p className='text-black font-sans text-lg font-normal text-center'>{props.amount}</p>
-            <p className='text-black font-sans text-lg font-normal text-center'>{props.time}</p>
+            <h3 className='text-gray-800 font-sans text-xl font-semibold text-center'>{props.title}</h3>
+            <p className='text-gray-800 font-sans text-lg font-normal text-center'>{props.amount}</p>
+            <p className='text-gray-900 font-sans text-lg font-normal text-center'>{props.time}</p>
         </div>
     );
 }
