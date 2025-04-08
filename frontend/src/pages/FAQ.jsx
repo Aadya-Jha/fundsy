@@ -1,5 +1,5 @@
 import React from "react";
-
+import { motion } from "framer-motion";
 import Questions from '../components/questions.jsx'
 import Navbar from "../components/Navbar";
 import Forum from "../components/Forum.jsx";
@@ -11,8 +11,14 @@ const FAQ = () => {
             <div className="bg-beige-light min-h-screen w-full  text-3xl font-serif font-extrabold flex  ">
             
             <div className="md:w-2/3 sm:w-5/6 w-10/12 flex flex-col sm:pl-4 py-4">
-                <h1 className="text-purple text-5xl flex justify-center items-start font-sans "
-                style={{textShadow: '0 0 6px rgba(255, 255, 255, 0.3)'}}>FAQs</h1>
+                <motion.h1 
+                 initial={{ opacity: 0, y: -30 }}
+                 animate={{ opacity: 1, y: 0 }}
+                 transition={{ duration: 0.6 }}
+                className="text-purple text-5xl flex justify-center items-start font-sans "
+                style={{textShadow: '0 0 6px rgba(255, 255, 255, 0.3)'}}>
+                    FAQs
+                </motion.h1>
                 
                     <Questions ques="What is Fundsy and how does it work?"
                      ans="Fundsy is a blockchain-based crowdfunding platform that allows students in financial need to receive donations and government
