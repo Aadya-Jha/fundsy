@@ -52,7 +52,7 @@ const Explore = (props) => {
   return (
     <div>
       <Navbar />
-      <div className="bg-beige-light min-h-screen w-screen ">
+      <div className="bg-beige-light min-h-screen px-4 overflow-x-hidden">
       <motion.h1
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}

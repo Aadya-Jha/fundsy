@@ -6,9 +6,9 @@ import Forum from "../components/Forum.jsx";
 
 const FAQ = () => {
     return(
-        <div>
+        <div className="overflow-x-hidden max-w-full">
             <Navbar />
-            <div className="bg-beige-light min-h-screen w-screen text-3xl font-serif font-extrabold flex  ">
+            <div className="bg-beige-light min-h-screen w-full  text-3xl font-serif font-extrabold flex  ">
             
             <div className="md:w-2/3 sm:w-5/6 w-10/12 flex flex-col sm:pl-4 py-4">
                 <h1 className="text-purple text-5xl flex justify-center items-start font-sans "
