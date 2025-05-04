@@ -37,7 +37,6 @@ const features = [
 const About = () => {
   return (
     <div>
-      <Navbar />
       <main className="min-h-screen bg-[#fefcf8] px-6 py-12 sm:px-12 md:px-20 text-gray-800">
         <section className="max-w-6xl mx-auto">
           <motion.h1

@@ -1,44 +1,45 @@
-import React from "react";
-import Explore from "./pages/explore.jsx";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home.jsx";
-import About from "./pages/About.jsx";
-import NotFound from "./pages/NotFound.jsx";
-import FAQ from "./pages/FAQ.jsx";
+import React from "react"; // ✅ ADD THIS LINE
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useEffect, useState } from "react";
+import HomePage from "./pages/HomePage";
+import ExplorePage from "./pages/ExplorePage";
+import AboutPage from "./pages/AboutPage";
+import FAQPage from "./pages/FAQPage";
+import RequestAidPage from "./pages/RequestAidPage";
+import ThankYouPageReq from "./pages/ThankYouPageReq";
+import ThankYouPageReq2 from "./pages/ThankYouPageReq2";
+import DonationPage from "./pages/DonationPage";
+import Navbar from "./components/Navbar";
+import NotFoundPage from "./pages/NotFoundPage";
+
 function App() {
+  const [wallet, setWallet] = useState(null);
+
+  useEffect(() => {
+    console.log(wallet);
+  }, [wallet]);
+
   return (
     <BrowserRouter>
       <div className="min-h-screen">
-        {/* Render CustomCursor */}
-
-        {/* <Navbar wallet={wallet} setWallet={setWallet} /> */}
+        <Navbar wallet={wallet} setWallet={setWallet} />
         <main className="flex-grow">
           <Routes>
             <Route
               path="/"
-              element={<Home /*wallet={wallet} setWallet={setWallet}*/ />}
+              element={<HomePage wallet={wallet} setWallet={setWallet} />}
             />
-            {/* <Route path="/marketplace" />
-            <Route path="/create" /> */}
-            <Route path="/explore" element={<Explore />} />
-            {/* <Route path="/donate/:campaignId" element={<DonationPage />} />
-
+            <Route path="/explore" element={<ExplorePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/faq" element={<FAQPage />} />
+            <Route path="/request-aid" element={<RequestAidPage />} />
             <Route path="/thank-you-req" element={<ThankYouPageReq />} />
-            <Route path="/thank-you-req-2" element={<ThankYouPageReq2 />} /> */}
-            <Route path="/about" element={<About />} />
-            <Route path="/FAQ" element={<FAQ />} />
-            {/* <Route path="/donate/:campaignId" element={<DonationPage />} />
-            <Route path="/request-aid" element={<RequestAidPage />} /> */}
-            <Route path="*" element={<NotFound />} />
+            <Route path="/thank-you-req-2" element={<ThankYouPageReq2 />} />
+            <Route path="/donate/:campaignId" element={<DonationPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>
-
-        {/* Chatbot and Footer Components
-        <MyChatbot />
-        <Footer />
-        <ScrollToTop /> */}
       </div>
-      {/* <GTranslateLoader /> */}
     </BrowserRouter>
   );
 }

@@ -74,8 +74,6 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar />
-
       <main className="bg-[#fefcf8] min-h-[90vh] flex items-center justify-center px-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
