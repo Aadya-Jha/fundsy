@@ -80,7 +80,7 @@ const DonationPage = () => {
               id="donorName"
               name="donorName"
               required
-              className="w-full p-3 bg-[#fefcf8] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple"
+              className="w-full p-3 bg-[#fefcf8] rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-purple"
               value={formData.donorName}
               onChange={handleChange}
             />
