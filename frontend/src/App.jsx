@@ -5,9 +5,7 @@ import HomePage from "./pages/HomePage";
 import ExplorePage from "./pages/ExplorePage";
 import AboutPage from "./pages/AboutPage";
 import FAQPage from "./pages/FAQPage";
-import RequestAidPage from "./pages/RequestAidPage";
-import ThankYouPageReq from "./pages/ThankYouPageReq";
-import ThankYouPageReq2 from "./pages/ThankYouPageReq2";
+import ThankYouPage from "./pages/ThankYouPage";
 import DonationPage from "./pages/DonationPage";
 import Navbar from "./components/Navbar";
 import NotFoundPage from "./pages/NotFoundPage";
@@ -32,9 +30,7 @@ function App() {
             <Route path="/explore" element={<ExplorePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/faq" element={<FAQPage />} />
-            <Route path="/request-aid" element={<RequestAidPage />} />
-            <Route path="/thank-you-req" element={<ThankYouPageReq />} />
-            <Route path="/thank-you-req-2" element={<ThankYouPageReq2 />} />
+            <Route path="/thank-you" element={<ThankYouPage />} />
             <Route path="/donate" element={<DonationPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
