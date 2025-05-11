@@ -9,6 +9,7 @@ import ThankYouPage from "./pages/ThankYouPage";
 import DonationPage from "./pages/DonationPage";
 import Navbar from "./components/Navbar";
 import NotFoundPage from "./pages/NotFoundPage";
+import Ledger from "./pages/Ledger";
 
 function App() {
   const [wallet, setWallet] = useState(null);
@@ -32,6 +33,11 @@ function App() {
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/thank-you" element={<ThankYouPage />} />
             <Route path="/donate" element={<DonationPage />} />
+            <Route path="/ledger" element={<Ledger />} />
+            <Route path="/request-aid" element={<RequestAidPage />} />
+            <Route path="/thank-you-req" element={<ThankYouPageReq />} />
+            <Route path="/thank-you-req-2" element={<ThankYouPageReq2 />} />
+            <Route path="/donate/:campaignId" element={<DonationPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>
