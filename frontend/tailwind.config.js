@@ -3,6 +3,8 @@ export default {
   important: true,
   content: [
     "./index.html",
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./index.html",
     "./src/App.jsx",
     "./src/pages/explore.jsx",
     "./src/components/card.jsx",
@@ -14,7 +16,7 @@ export default {
     "./src/pages/NotFound.jsx",
     "./src/components/questions.jsx",
     "./src/components/Forum.jsx",
-    "./src/components/ForumCard.jsx"
+    "./src/components/ForumCard.jsx",
   ],
   theme: {
     extend: {

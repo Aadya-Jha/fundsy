@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -111,69 +110,67 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-beige-dark text-gray-800 py-10 px-6 shadow-inner">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-12">
-          <div className="flex-1">
-            <h3 className="text-2xl font-extrabold text-violet-950 mb-2">
+      <footer className="bg-beige-dark text-gray-800 py-12 px-6 shadow-inner">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
+          {/* Branding */}
+          <div>
+            <h3 className="text-3xl font-extrabold text-violet-950 mb-4">
               Fundsy
             </h3>
-            <p className="text-sm text-gray-600 max-w-xs leading-relaxed">
+            <p className="text-sm text-gray-600 leading-relaxed max-w-sm">
               Empowering education through transparent, blockchain-powered
               funding.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-8 text-sm">
-            <div>
-              <h4 className="font-semibold text-purple-600 mb-2">
-                Quick Links
-              </h4>
-              <ul className="space-y-1">
-                <li>
-                  <a href="/" className="hover:text-purple-700 transition">
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a href="/about" className="hover:text-purple-700 transition">
-                    About
-                  </a>
-                </li>
-                <li>
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-lg font-semibold text-purple-600 mb-3">
+              Quick Links
+            </h4>
+            <ul className="space-y-2 text-sm">
+              {[
+                { name: "Home", href: "/" },
+                { name: "About", href: "/about" },
+                { name: "Explore", href: "/explore" },
+                { name: "FAQs", href: "/faq" },
+                { name: "Contact", href: "/contact" },
+              ].map((link) => (
+                <li key={link.name}>
                   <a
-                    href="/explore"
-                    className="hover:text-purple-700 transition"
+                    href={link.href}
+                    className="hover:text-purple-700 transition-colors"
                   >
-                    Explore
+                    {link.name}
                   </a>
                 </li>
-                <li>
-                  <a href="/FAQ" className="hover:text-purple-700 transition">
-                    FAQs
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold text-purple-600 mb-2">Contact</h4>
-              <ul className="space-y-1">
-                <li>
-                  Email:{" "}
-                  <a
-                    href="mailto:support@fundsy.org"
-                    className="hover:text-purple-700 transition"
-                  >
-                    support@fundsy.org
-                  </a>
-                </li>
-                <li>Phone: +91 98765 43210</li>
-                <li>Location: Bangalore, India</li>
-              </ul>
-            </div>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="text-lg font-semibold text-purple-600 mb-3">
+              Contact
+            </h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                Email:{" "}
+                <a
+                  href="mailto:support@fundsy.org"
+                  className="hover:text-purple-700 transition-colors"
+                >
+                  support@fundsy.org
+                </a>
+              </li>
+              <li>Phone: +91 98765 43210</li>
+              <li>Location: Bangalore, India</li>
+            </ul>
           </div>
         </div>
-        <div className="text-center text-xs text-gray-400 mt-10 pt-6 border-t border-gray-200">
+
+        {/* Bottom Note */}
+        <div className="mt-12 text-center text-xs text-gray-500 border-t pt-6 border-gray-300">
           © {new Date().getFullYear()} Fundsy. All rights reserved.
         </div>
       </footer>

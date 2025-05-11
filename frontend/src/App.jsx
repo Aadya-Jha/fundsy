@@ -20,10 +20,10 @@ function App() {
   }, [wallet]);
 
   return (
-    <BrowserRouter>
-      <div className="min-h-screen">
+    <div className="overflow-hidden">
+      <BrowserRouter>
         <Navbar wallet={wallet} setWallet={setWallet} />
-        <main className="flex-grow">
+        <main>
           <Routes>
             <Route
               path="/"
@@ -39,8 +39,8 @@ function App() {
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </div>
   );
 }
 
