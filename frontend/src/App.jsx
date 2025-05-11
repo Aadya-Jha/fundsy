@@ -35,7 +35,7 @@ function App() {
             <Route path="/request-aid" element={<RequestAidPage />} />
             <Route path="/thank-you-req" element={<ThankYouPageReq />} />
             <Route path="/thank-you-req-2" element={<ThankYouPageReq2 />} />
-            <Route path="/donate/:campaignId" element={<DonationPage />} />
+            <Route path="/donate" element={<DonationPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>

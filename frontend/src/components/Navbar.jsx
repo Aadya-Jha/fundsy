@@ -77,10 +77,8 @@ const Navbar = () => {
           ))}
           <button
             onClick={connectWallet}
-            className={`px-2 text-black sm:px-4 py-1 sm:py-2 rounded-md text-xs sm:text-sm font-medium transition ${
-              walletAddress
-                ? "bg-olive "
-                : "bg-pink hover:bg-purple hover:text-white"
+            className={`px-2 text-black rounded-full sm:px-4 py-1 sm:py-2  text-xs sm:text-sm font-medium transition ${
+              walletAddress ? "bg-olive" : "bg-purple text-white"
             }`}
           >
             {walletAddress ? "Wallet Connected" : "Connect Wallet"}
@@ -105,7 +103,9 @@ const Navbar = () => {
           ))}
           <button
             onClick={connectWallet}
-            className="bg-olive px-4 py-2 rounded-md text-sm font-medium hover:bg-purple transition"
+            className={`px-4 py-2 rounded-md text-sm font-medium ${
+              walletAddress ? "bg-olive" : "bg-purple"
+            }`}
           >
             {walletAddress ? "Wallet Connected" : "Connect Wallet"}
           </button>

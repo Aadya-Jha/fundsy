@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { GraduationCap, ShieldCheck, Rocket, Users } from "lucide-react";
-import Navbar from "../components/Navbar";
 
 const features = [
   {
@@ -52,7 +51,7 @@ const About = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            className="text-lg sm:text-xl text-gray-700 text-center mb-14 max-w-3xl mx-auto"
+            className="text-lg font-light sm:text-xl text-gray-700 text-center mb-14 max-w-3xl mx-auto"
           >
             Fundsy is a platform that empowers students by enabling transparent,
             blockchain-based financial support for their education. Every

@@ -134,7 +134,6 @@ const Home = () => {
                 { name: "About", href: "/about" },
                 { name: "Explore", href: "/explore" },
                 { name: "FAQs", href: "/faq" },
-                { name: "Contact", href: "/contact" },
               ].map((link) => (
                 <li key={link.name}>
                   <a
