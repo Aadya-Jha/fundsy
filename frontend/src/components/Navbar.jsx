@@ -36,6 +36,7 @@ const Navbar = () => {
   const navItems = [
     { name: "Explore", link: "/explore" },
     { name: "About", link: "/about" },
+    { name: "Ledger", link: "/ledger" },
     { name: "FAQs", link: "/faq" },
   ];
 
