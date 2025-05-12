@@ -1,0 +1,17 @@
+# node modules (local)
+node_modules
+
+# build output (we generate fresh build inside Docker)
+build
+
+# logs and temp files
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# dotenv files
+.env
+
+# Docker files
+Dockerfile
+.dockerignore
