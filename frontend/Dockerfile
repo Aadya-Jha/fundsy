@@ -1,24 +1,32 @@
-# Step 1: Build the React app
-FROM node:18 AS build
+# Use Node.js 20 image
+FROM node:20
 
+# Set working directory
 WORKDIR /app
-COPY package*.json ./
-RUN npm install
 
+# Install global npm dependencies (optional)
+RUN npm install -g npm@latest
+
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install --legacy-peer-deps --no-cache
+
+# Copy the rest of the app
 COPY . .
+
+# Build the React app
 RUN npm run build
 
-# Step 2: Serve with Nginx
+# Use Nginx to serve the app
 FROM nginx:alpine
-
-# Remove default static files
 RUN rm -rf /usr/share/nginx/html/*
+COPY --from=0 /app/dist /usr/share/nginx/html
 
-# Copy build files from React app
-COPY --from=build /app/build /usr/share/nginx/html
 
-# Expose port 80
+# Expose port
 EXPOSE 80
 
-# Start Nginx server
+# Run the app
 CMD ["nginx", "-g", "daemon off;"]
