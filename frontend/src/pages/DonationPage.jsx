@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ethers } from "ethers";
+import { useLocation } from "react-router-dom"; // ✅ updated
 
 const DonationPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const campaign = location.state?.campaign || "Unknown Campaign";
 
   const [formData, setFormData] = useState({
     donorName: "",
+    donorAddress: "",
     donationAmount: "",
   });
 
@@ -39,7 +43,7 @@ const DonationPage = () => {
 
       const tx = {
         from: sender,
-        to: "0x7961c69914498d0d8bfAEf7eC45D24B4e96DDd71", // <-- Replace this
+        to: "0x7961c69914498d0d8bfAEf7eC45D24B4e96DDd71", // <-- Replace this with the receiver address dynamically
         value: "0x" + amountInWei,
       };
 
@@ -53,11 +57,22 @@ const DonationPage = () => {
       // Reset the form
       setFormData({
         donorName: "",
+        donorAddress: "",
         donationAmount: "",
       });
 
-      // Navigate to thank you page
-      navigate("/thank-you");
+      // Navigate to the Ledger page with transaction details
+      navigate("/ledger", {
+        state: {
+          donorAddress: formData.donorAddress,
+          receiverAddress: tx.to, // "0x7961..." or tx.to if dynamic
+          donationAmount: formData.donationAmount,
+          campaign: campaign,
+          success: true,
+          timestamp: new Date().toLocaleString(),
+          txHash: txHash, // Transaction hash
+        },
+      });
     } catch (error) {
       console.error("Transaction failed:", error);
       alert("Transaction failed: " + (error.message || "Unknown error"));
