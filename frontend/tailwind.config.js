@@ -17,7 +17,7 @@ export default {
     "./src/components/questions.jsx",
     "./src/components/Forum.jsx",
     "./src/components/ForumCard.jsx",
-    "./src/pages/Ledger.jsx"
+    "./src/pages/Ledger.jsx",
   ],
   theme: {
     extend: {

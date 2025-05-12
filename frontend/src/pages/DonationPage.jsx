@@ -86,6 +86,20 @@ const DonationPage = () => {
             />
           </div>
           <div>
+            <label className="block text-black mb-2" htmlFor="donorAddress">
+              Wallet Address
+            </label>
+            <input
+              type="text"
+              id="donorAddress"
+              name="donorAddress"
+              required
+              className="w-full p-3 bg-[#fefcf8] rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-purple"
+              value={formData.donorAddress}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
             <label className="block text-black mb-2" htmlFor="donationAmount">
               Donation Amount (ETH)
             </label>
